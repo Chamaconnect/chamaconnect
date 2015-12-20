@@ -5,3 +5,13 @@
 .DS_Store
 /build
 /captures
+chamaconnect.iml
+.idea/compiler.xml
+.idea/copyright
+.idea/gradle.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/runConfigurations.xml
+.idea/vcs.xml
+.idea/.name
+app/app.iml
