@@ -3,4 +3,16 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="counties_array">
+        <item>Nairobi</item>
+        <item>Mombasa</item>
+        <item>Kwale</item>
+        <item>Kilifi</item>
+        <item>Kisii</item>
+        <item>Nyamira</item>
+        <item>Kericho</item>
+        <item>Bungoma</item>
+    </string-array>
+
 </resources>

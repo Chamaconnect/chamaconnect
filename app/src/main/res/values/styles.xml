@@ -4,6 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/light_green</item>
         <item name="colorPrimaryDark">@color/dark_blue</item>
+        <item name="android:elevation">0dp</item>
         <!-- Customize your theme here. -->
     </style>
 
