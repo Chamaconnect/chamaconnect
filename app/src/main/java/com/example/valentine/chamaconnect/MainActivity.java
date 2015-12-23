@@ -1,5 +1,6 @@
 package com.example.valentine.chamaconnect;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,6 +12,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setupAppbarIcon();
+    }
+
+    private void setupAppbarIcon(){
+        ActionBar actionbar = getSupportActionBar();
+        actionbar.setDisplayShowHomeEnabled(true);
+        actionbar.setIcon(R.mipmap.ic_launcher);
     }
 
     @Override
