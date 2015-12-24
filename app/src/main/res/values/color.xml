@@ -6,10 +6,10 @@
     <!-- http://www.google.com/design/spec/style/color.html#color-color-palette -->
 
     <!-- my-palette-->
-    <color name="lime_green">#D4FFA3</color>
-    <color name="light_green">#00D8B1</color>
-    <color name="light_blue">#1F9EC7</color>
-    <color name="dark_blue">#3F7A9C</color>
+    <color name="lime_green">#2DEA8F</color>
+    <color name="light_green">#24B273</color>
+    <color name="light_blue">#167A8B</color>
+    <color name="dark_blue">#243D44</color>
 
 
     <!-- Red -->

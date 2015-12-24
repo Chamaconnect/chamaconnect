@@ -14,5 +14,6 @@
         <item>Kericho</item>
         <item>Bungoma</item>
     </string-array>
+    <string name="title_activity_toolbar">ToolbarActivity</string>
 
 </resources>
