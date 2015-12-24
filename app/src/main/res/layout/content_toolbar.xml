@@ -12,6 +12,10 @@
     tools:context="com.example.valentine.chamaconnect.ToolbarActivity"
     tools:showIn="@layout/activity_toolbar">
 
-    <include layout="@layout/property_card" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/properties"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 
 </RelativeLayout>
