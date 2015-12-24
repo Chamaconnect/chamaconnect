@@ -12,4 +12,6 @@
     tools:context="com.example.valentine.chamaconnect.ToolbarActivity"
     tools:showIn="@layout/activity_toolbar">
 
+    <include layout="@layout/property_card" />
+
 </RelativeLayout>
