@@ -3,8 +3,9 @@
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
-    android:layout_margin="0dp"
+    android:layout_height="@dimen/property_height"
+    android:layout_marginBottom="@dimen/card_bottom_margin"
+    cardview:cardElevation="2dp"
     cardview:cardCornerRadius="0dp">
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
