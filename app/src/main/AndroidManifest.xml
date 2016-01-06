@@ -10,7 +10,6 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-
         <meta-data
             android:name="com.parse.APPLICATION_ID"
             android:value="usSvkOLma7JHM0Nc8cAAwH5nCI0mULIBpA8UUQhm" />
@@ -30,6 +29,10 @@
         <activity
             android:name=".Signup"
             android:label="@string/title_activity_signup" >
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" >
         </activity>
     </application>
 
