@@ -40,7 +40,7 @@ public class ToolbarActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this,
                 R.array.counties_array, R.layout.spinner_layout);
 // Specify the layout to use when the list of choices appears
-        spinnerAdapter.setDropDownViewResource(R.layout.spinner_layout);
+        spinnerAdapter.setDropDownViewResource(R.layout.spinner_item);
 
         spinner.setAdapter(spinnerAdapter);
 

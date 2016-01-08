@@ -4,7 +4,7 @@
     android:id="@+id/spinnerTarget"
     android:layout_width="220dp"
     android:layout_height="wrap_content"
-    android:textSize="20sp"
+    android:textSize="@dimen/spinner_item_font_size"
     android:textColor="@color/white"
     android:popupBackground="#ffffff"
     android:gravity="center" />
