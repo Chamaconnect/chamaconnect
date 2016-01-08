@@ -27,13 +27,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Signup"
-            android:label="@string/title_activity_signup" >
+            android:name=".SignupActivity"
+            android:label="@string/title_activity_signup"
+            android:theme="@style/AppTheme.Dark"
+            >
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login" >
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.Dark">
         </activity>
+
     </application>
 
 </manifest>
