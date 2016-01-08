@@ -28,6 +28,22 @@ public class ToolbarActivity extends AppCompatActivity {
         toolbar.setLogo(R.drawable.ic_action_appbar_icon);
         setSupportActionBar(toolbar);
 
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+       // ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                //R.array.counties_array, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        //spinner.setAdapter(adapter);
+
+        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this,
+                R.array.counties_array, R.layout.spinner_layout);
+// Specify the layout to use when the list of choices appears
+        spinnerAdapter.setDropDownViewResource(R.layout.spinner_layout);
+
+        spinner.setAdapter(spinnerAdapter);
+
         recyclerView = (RecyclerView) findViewById(R.id.properties);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(llm);
@@ -48,16 +64,7 @@ public class ToolbarActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        MenuItem item = menu.findItem(R.id.spinner);
-        Spinner spinner = (Spinner) MenuItemCompat.getActionView(item);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.counties_array, R.layout.spinner_layout);
-// Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spinner.setAdapter(adapter); // set the adapter to provide layout of rows and content
-        //spinner.setOnItemSelectedListener(onItemSelectedListener); // set the listener, to perform actions based on item selection
         return true;
     }
 

@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+    <resources>
 
     <!-- Material Design - Color Palette -->
     <!-- Date: 1/15/2015 -->
     <!-- http://www.google.com/design/spec/style/color.html#color-color-palette -->
+
+    <!-- listing shadow -->
+    <color name="start_color">#90000000</color>
+    <color name="end_color">#2DEA8F</color>
 
     <!-- my-palette-->
     <color name="lime_green">#2DEA8F</color>
     <color name="light_green">#24B273</color>
     <color name="light_blue">#167A8B</color>
     <color name="dark_blue">#243D44</color>
-
 
     <!-- Red -->
     <color name="red_50">#FFEBEE</color>

@@ -6,5 +6,5 @@
 
     <!-- card details -->
     <dimen name="property_height">200dp</dimen>
-    <dimen name="card_bottom_margin">0dp</dimen>
+    <dimen name="card_bottom_margin">10dp</dimen>
 </resources>

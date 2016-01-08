@@ -4,12 +4,6 @@
 
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
 
-    <item android:id="@+id/spinner"
-        android:title="Jello"
-        android:orderInCategory="100"
-        chamaconnect:showAsAction="ifRoom"
-        chamaconnect:actionViewClass="android.widget.Spinner" />
-
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
         android:orderInCategory="100"
