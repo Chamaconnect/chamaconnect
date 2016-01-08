@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="@color/light_green"
-    tools:context="com.example.valentine.chamaconnect.ToolbarActivity">
+    tools:context=".ListingsActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
