@@ -4,8 +4,23 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import butterknife.InjectView;
 
 public class SignupActivity extends AppCompatActivity {
+    private static final String TAG = "SignupActivity";
+
+    @InjectView(R.id.input_name)
+    EditText _nameText;
+    @InjectView(R.id.input_email) EditText _emailText;
+    @InjectView(R.id.input_password) EditText _passwordText;
+    @InjectView(R.id.btn_signup)
+    Button _signupButton;
+    @InjectView(R.id.link_login)
+    TextView _loginLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
