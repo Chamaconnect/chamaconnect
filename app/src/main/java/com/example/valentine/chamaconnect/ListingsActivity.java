@@ -1,5 +1,6 @@
 package com.example.valentine.chamaconnect;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,9 +16,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.Request.Method;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.valentine.chamaconnect.helper.CustomItemClickListener;
+import com.example.valentine.chamaconnect.helper.MySingleton;
 import com.example.valentine.chamaconnect.model.Property;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -25,7 +39,9 @@ public class ListingsActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ArrayList<Property> properties;
+    private static final String TAG = "DROGO";
 
+    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +50,8 @@ public class ListingsActivity extends AppCompatActivity {
         toolbar.setTitle("Chama");
         toolbar.setLogo(R.drawable.ic_action_appbar_icon);
         setSupportActionBar(toolbar);
+
+        properties = new ArrayList<Property>(); // I hate the null values
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this,
@@ -47,9 +65,45 @@ public class ListingsActivity extends AppCompatActivity {
         LinearLayoutManager llm = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(llm);
 
-        initializeData();
-        PropertyAdapter adapter = new PropertyAdapter(properties);
+        //initializeData();
+        //setupVolley();
 
+        Log.e(TAG, "----------- start ------- ");
+
+        /**
+         * Making volley's json object request to fetch list of photos of an
+         * album
+         * */
+        JsonObjectRequest jsonReq = new JsonObjectRequest(Method.GET,
+                URL_FEED, null, new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.e(TAG, "----------- does it ever parse anything ------- ");
+
+                VolleyLog.e(TAG, "Response: " + response.toString());
+                if (response != null) {
+                    parseJsonFeed(response);
+                }
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.e(TAG, "Error: " + error.getMessage());
+            }
+        });
+
+        Log.e(TAG, "----------- request ready ------- "+ jsonReq.toString());
+
+        RequestQueue mRequestQueue = Volley.newRequestQueue(this);
+        mRequestQueue.add(jsonReq);
+
+        //MySingleton.getInstance(this).addToRequestQueue(jsonReq);
+
+        Log.e(TAG, "----------- got instance and run it ------- ");
+
+        PropertyAdapter adapter = new PropertyAdapter(this, properties);
 
         // Define click listener for the ViewHolder's View.
         adapter.setListener(new CustomItemClickListener() {
@@ -81,6 +135,42 @@ public class ListingsActivity extends AppCompatActivity {
         });
     }
 
+    private String URL_FEED = "http://api.androidhive.info/feed/feed.json";
+
+    /**
+     * Parsing json reponse and passing the data to feed view list adapter
+     * */
+    private void parseJsonFeed(JSONObject response) {
+        Log.e(TAG, "----------- nothing was ever parsed ------- ");
+        try {
+            JSONArray feedArray = response.getJSONArray("feed");
+
+            for (int i = 0; i < feedArray.length(); i++) {
+                JSONObject feedObj = (JSONObject) feedArray.get(i);
+
+                Property prop = new Property();
+                prop.setDescription(feedObj.getString("name"));
+                prop.setLocation(feedObj.getString("status"));
+
+
+                // Image might be null sometimes
+                String image = feedObj.isNull("image") ? null : feedObj
+                        .getString("image");
+
+                prop.setPhotoId(image);
+
+                properties.add(prop);
+            }
+            Log.e(TAG, "----------- Can you hear me !!!!!!!!! ------- ");
+
+            // notify data changes to list adapater
+            //recyclerView.notifyDataSetChanged();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -89,11 +179,4 @@ public class ListingsActivity extends AppCompatActivity {
         return true;
     }
 
-    private void initializeData(){
-        ArrayList<Property> properties = new ArrayList<Property>();
-        properties.add(new Property("Karen", "KAREN BROOKS 23 ACRES DEVELOPMENT PLOT", R.drawable.prop_1));
-        properties.add(new Property("Westlands", "WARAI RD 4 BED VILLA", R.drawable.prop_2));
-        properties.add(new Property("Ridgeways", "ALMASI 4 BED PLUS VILLA", R.drawable.prop_2));
-        this.properties = properties;
-    }
 }

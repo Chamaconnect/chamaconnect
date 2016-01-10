@@ -1,5 +1,6 @@
 package com.example.valentine.chamaconnect;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -10,8 +11,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.volley.toolbox.NetworkImageView;
 import com.example.valentine.chamaconnect.helper.CustomItemClickListener;
+import com.example.valentine.chamaconnect.helper.MySingleton;
 import com.example.valentine.chamaconnect.model.Property;
+
+import com.android.volley.toolbox.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,23 +28,30 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
 
     private List<Property> properties;
     CustomItemClickListener listener;
+    static ImageLoader imageLoader;
 
-    public PropertyAdapter(List<Property> properties) {
+    public PropertyAdapter(Activity activity, List<Property> properties) {
         this.properties = properties;
+        this.imageLoader = MySingleton.getInstance(activity.getApplicationContext()).getImageLoader();
+
     }
 
     public static class PropertyViewHolder extends RecyclerView.ViewHolder {
         CardView cv;
         TextView propertyLocation;
         TextView propertyDescription;
-        ImageView propertyPhoto;
+        NetworkImageView propertyPhoto;
 
         PropertyViewHolder(View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.card_view);
             propertyLocation = (TextView)itemView.findViewById(R.id.title);
             propertyDescription = (TextView)itemView.findViewById(R.id.desc);
-            propertyPhoto = (ImageView)itemView.findViewById(R.id.thumbnail);
+
+            if (imageLoader == null)
+                imageLoader = MySingleton.getInstance(itemView.getContext()).getImageLoader();
+
+            propertyPhoto = (NetworkImageView) itemView.findViewById(R.id.thumbnail);
         }
     }
 
@@ -60,7 +72,7 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
     public void onBindViewHolder(PropertyViewHolder propertyViewHolder, int i) {
         propertyViewHolder.propertyLocation.setText(properties.get(i).getLocation());
         propertyViewHolder.propertyDescription.setText(properties.get(i).getDescription());
-        propertyViewHolder.propertyPhoto.setImageResource(properties.get(i).getPhotoId());
+        propertyViewHolder.propertyPhoto.setImageUrl(properties.get(i).getPhotoId(), imageLoader);
     }
 
     public int getItemCount() {

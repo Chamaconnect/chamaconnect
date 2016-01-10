@@ -12,12 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
+        <com.android.volley.toolbox.NetworkImageView
             android:id="@+id/thumbnail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/prop_1" />
+            android:scaleType="centerCrop" >
+        </com.android.volley.toolbox.NetworkImageView>
 
         <LinearLayout
             android:orientation="vertical"

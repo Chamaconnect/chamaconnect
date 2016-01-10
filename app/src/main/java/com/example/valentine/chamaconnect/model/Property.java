@@ -7,9 +7,13 @@ public class Property {
 
     String location;
     String description;
-    int photoId;
+    String photoId;
 
-    public Property(String location, String description, int photoId) {
+    public Property(){
+        super();
+    }
+
+    public Property(String location, String description, String photoId) {
         this.location = location;
         this.description = description;
         this.photoId = photoId;
@@ -31,11 +35,11 @@ public class Property {
         this.description = description;
     }
 
-    public int getPhotoId(){
+    public String getPhotoId(){
         return photoId;
     }
 
-    public void setPhotoId(int photoId){
+    public void setPhotoId(String photoId){
         this.photoId = photoId;
     }
 
