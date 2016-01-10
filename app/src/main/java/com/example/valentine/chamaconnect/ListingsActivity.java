@@ -1,5 +1,6 @@
 package com.example.valentine.chamaconnect;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.example.valentine.chamaconnect.helper.CustomItemClickListener;
 import com.example.valentine.chamaconnect.model.Property;
 
 import java.util.ArrayList;
@@ -47,7 +49,26 @@ public class ListingsActivity extends AppCompatActivity {
 
         initializeData();
         PropertyAdapter adapter = new PropertyAdapter(properties);
-        
+
+
+        // Define click listener for the ViewHolder's View.
+        adapter.setListener(new CustomItemClickListener() {
+
+            @Override
+            public void onItemClick(View v, int position) {
+                int clickedItem = position;
+                Log.e("DROGO", "Element " + clickedItem + " clicked.");
+
+                Intent propertyIntent = new Intent(v.getContext(), PropertyActivity.class);
+
+                propertyIntent.putExtra("PROPERTY_ID", clickedItem);
+
+                v.getContext().startActivity(propertyIntent);
+
+            }
+
+        });
+
         recyclerView.setAdapter(adapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);

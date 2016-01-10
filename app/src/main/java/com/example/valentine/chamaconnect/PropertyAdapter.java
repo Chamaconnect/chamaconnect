@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.valentine.chamaconnect.helper.CustomItemClickListener;
 import com.example.valentine.chamaconnect.model.Property;
 
 import java.util.ArrayList;
@@ -21,14 +22,10 @@ import java.util.List;
 public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.PropertyViewHolder>{
 
     private List<Property> properties;
+    CustomItemClickListener listener;
 
     public PropertyAdapter(List<Property> properties) {
         this.properties = properties;
-        if (properties != null) {
-            Log.e("DROGO", " We have lift off");
-        } else {
-            Log.e("DROGO", "what the hell is going on");
-        }
     }
 
     public static class PropertyViewHolder extends RecyclerView.ViewHolder {
@@ -43,28 +40,19 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
             propertyLocation = (TextView)itemView.findViewById(R.id.title);
             propertyDescription = (TextView)itemView.findViewById(R.id.desc);
             propertyPhoto = (ImageView)itemView.findViewById(R.id.thumbnail);
-
-            // Define click listener for the ViewHolder's View.
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int clickedItem = getAdapterPosition();
-                    Log.d("DROGO", "Element " + clickedItem + " clicked.");
-
-                    Intent propertyIntent = new Intent(v.getContext(), PropertyActivity.class);
-
-                    propertyIntent.putExtra("PROPERTY_ID",clickedItem );
-
-                    v.getContext().startActivity(propertyIntent);
-                }
-            });
         }
     }
 
     @Override
     public PropertyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.property_card, viewGroup, false);
-        PropertyViewHolder pvh = new PropertyViewHolder(v);
+        final PropertyViewHolder pvh = new PropertyViewHolder(v);
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemClick(v, pvh.getAdapterPosition());
+            }
+        });
         return pvh;
     }
 
@@ -77,6 +65,10 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
 
     public int getItemCount() {
         return properties.size();
+    }
+
+    public void setListener(CustomItemClickListener listener){
+        this.listener = listener;
     }
 
 }
