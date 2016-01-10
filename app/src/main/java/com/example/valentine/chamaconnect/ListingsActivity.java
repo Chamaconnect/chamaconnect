@@ -8,16 +8,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.example.valentine.chamaconnect.model.Property;
+
+import java.util.ArrayList;
+
 public class ListingsActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-
+    ArrayList<Property> properties;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +44,10 @@ public class ListingsActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.properties);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(llm);
-        PropertyAdapter adapter = new PropertyAdapter();
+
+        initializeData();
+        PropertyAdapter adapter = new PropertyAdapter(properties);
+        
         recyclerView.setAdapter(adapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -60,4 +68,11 @@ public class ListingsActivity extends AppCompatActivity {
         return true;
     }
 
+    private void initializeData(){
+        ArrayList<Property> properties = new ArrayList<Property>();
+        properties.add(new Property("Karen", "KAREN BROOKS 23 ACRES DEVELOPMENT PLOT", R.drawable.prop_1));
+        properties.add(new Property("Westlands", "WARAI RD 4 BED VILLA", R.drawable.prop_2));
+        properties.add(new Property("Ridgeways", "ALMASI 4 BED PLUS VILLA", R.drawable.prop_2));
+        this.properties = properties;
+    }
 }

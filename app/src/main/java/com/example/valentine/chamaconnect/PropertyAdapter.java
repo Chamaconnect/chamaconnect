@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.valentine.chamaconnect.model.Property;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,9 +22,13 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
 
     private List<Property> properties;
 
-    public PropertyAdapter(){
-        super();
-        initializeData();
+    public PropertyAdapter(List<Property> properties) {
+        this.properties = properties;
+        if (properties != null) {
+            Log.e("DROGO", " We have lift off");
+        } else {
+            Log.e("DROGO", "what the hell is going on");
+        }
     }
 
     public static class PropertyViewHolder extends RecyclerView.ViewHolder {
@@ -64,37 +70,13 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
 
     @Override
     public void onBindViewHolder(PropertyViewHolder propertyViewHolder, int i) {
-        propertyViewHolder.propertyLocation.setText(properties.get(i).location);
-        propertyViewHolder.propertyDescription.setText(properties.get(i).description);
-        propertyViewHolder.propertyPhoto.setImageResource(properties.get(i).photoId);
+        propertyViewHolder.propertyLocation.setText(properties.get(i).getLocation());
+        propertyViewHolder.propertyDescription.setText(properties.get(i).getDescription());
+        propertyViewHolder.propertyPhoto.setImageResource(properties.get(i).getPhotoId());
     }
 
     public int getItemCount() {
         return properties.size();
-    }
-
-    // This method creates an ArrayList that has three Person objects
-// Checkout the project associated with this tutorial on Github if
-// you want to use the same images.
-    private void initializeData(){
-        properties = new ArrayList<>();
-        properties.add(new Property("Karen", "KAREN BROOKS 23 ACRES DEVELOPMENT PLOT", R.drawable.prop_1));
-        properties.add(new Property("Westlands", "WARAI RD 4 BED VILLA", R.drawable.prop_2));
-        properties.add(new Property("Ridgeways", "ALMASI 4 BED PLUS VILLA", R.drawable.prop_2));
-    }
-
-    class Property {
-
-        String location;
-        String description;
-        int photoId;
-
-        Property(String location, String description, int photoId) {
-            this.location = location;
-            this.description = description;
-            this.photoId = photoId;
-        }
-
     }
 
 }
