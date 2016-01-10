@@ -13,5 +13,10 @@
     <dimen name="spinner_item_bottom_padding">5dp</dimen>
     <dimen name="spinner_item_left_padding">20dp</dimen>
     <dimen name="spinner_item_font_size">20sp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <!-- property page -->
+    <dimen name="prop_bar_height">250dp</dimen>
 
 </resources>

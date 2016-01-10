@@ -1,7 +1,9 @@
 package com.example.valentine.chamaconnect;
 
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +37,18 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
             propertyLocation = (TextView)itemView.findViewById(R.id.title);
             propertyDescription = (TextView)itemView.findViewById(R.id.desc);
             propertyPhoto = (ImageView)itemView.findViewById(R.id.thumbnail);
+
+            // Define click listener for the ViewHolder's View.
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d("DROGO", "Element " + getAdapterPosition() + " clicked.");
+
+                    Intent propertyIntent = new Intent(v.getContext(), PropertyActivity.class);
+
+                    v.getContext().startActivity(propertyIntent);
+                }
+            });
         }
     }
 
@@ -61,7 +75,7 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
 // you want to use the same images.
     private void initializeData(){
         properties = new ArrayList<>();
-        properties.add(new Property("Kileleshwa", "KAREN BROOKS 23 ACRES DEVELOPMENT PLOT", R.drawable.prop_1));
+        properties.add(new Property("Karen", "KAREN BROOKS 23 ACRES DEVELOPMENT PLOT", R.drawable.prop_1));
         properties.add(new Property("Westlands", "WARAI RD 4 BED VILLA", R.drawable.prop_2));
         properties.add(new Property("Ridgeways", "ALMASI 4 BED PLUS VILLA", R.drawable.prop_2));
     }
