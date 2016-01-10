@@ -14,6 +14,14 @@
         <item>Kericho</item>
         <item>Bungoma</item>
     </string-array>
+
+    <string-array name="nairobi_properties">
+        <item>Karen</item>
+        <item>Westlands</item>
+        <item>Ridgeways</item>
+        <item>Kasarani</item>
+    </string-array>
+
     <string name="title_activity_toolbar">ToolbarActivity</string>
     <string name="signup">username</string>
     <string name="title_activity_property">PropertyActivity</string>

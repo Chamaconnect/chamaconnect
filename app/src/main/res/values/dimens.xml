@@ -18,5 +18,6 @@
 
     <!-- property page -->
     <dimen name="prop_bar_height">250dp</dimen>
+    <dimen name="title_bar_top_margin">30dp</dimen>
 
 </resources>

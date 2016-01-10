@@ -42,9 +42,12 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.d("DROGO", "Element " + getAdapterPosition() + " clicked.");
+                    int clickedItem = getAdapterPosition();
+                    Log.d("DROGO", "Element " + clickedItem + " clicked.");
 
                     Intent propertyIntent = new Intent(v.getContext(), PropertyActivity.class);
+
+                    propertyIntent.putExtra("PROPERTY_ID",clickedItem );
 
                     v.getContext().startActivity(propertyIntent);
                 }
