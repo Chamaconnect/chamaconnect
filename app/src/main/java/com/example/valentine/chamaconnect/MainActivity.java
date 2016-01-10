@@ -1,9 +1,14 @@
 package com.example.valentine.chamaconnect;
 
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,12 +16,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setupAppbarIcon();
+    }
+
+    private void setupAppbarIcon(){
+        ActionBar actionbar = getSupportActionBar();
+        actionbar.setDisplayShowHomeEnabled(true);
+        actionbar.setIcon(R.mipmap.ic_launcher);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        // set the adapter to provide layout of rows and content
+        //spinner.setOnItemSelectedListener(onItemSelectedListener); // set the listener, to perform actions based on item selection
         return true;
     }
 

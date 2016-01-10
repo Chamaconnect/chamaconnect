@@ -2,10 +2,12 @@
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
+/.idea
 .DS_Store
 /build
 /captures
 chamaconnect.iml
+<<<<<<< HEAD
 .idea/compiler.xml
 .idea/copyright
 .idea/gradle.xml
