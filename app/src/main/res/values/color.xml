@@ -5,6 +5,20 @@
     <!-- Date: 1/15/2015 -->
     <!-- http://www.google.com/design/spec/style/color.html#color-color-palette -->
 
+    <!-- wireframe colors -->
+    <color name="status_bar_color">@color/wf_status_bar</color>
+    <color name="action_bar_color">@color/wf_action_bar</color>
+    <color name="general_bg">@color/wf_gen_bg</color>
+    <color name="button_bg">@color/wf_button_bg</color>
+    <color name="button_txt">@color/white</color>
+
+    <!-- wireframe colors -->
+    <color name="wf_status_bar">0000ff</color>
+    <color name="wf_action_bar">00aaff</color>
+    <color name="wf_button_bg">00aaff</color>
+    <color name="wf_gen_bg">f9f9f9</color>
+    <color name="wf_img_frame">d8d9d9</color>
+
     <!-- listing shadow -->
     <color name="start_color">#90000000</color>
     <color name="end_color">#2DEA8F</color>

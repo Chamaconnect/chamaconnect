@@ -86,7 +86,7 @@ public class ListingsActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e(TAG, "Error: " + error.getMessage());
+                Log.e(TAG, "----------- creating the jsonrequest ------- ");
                 VolleyLog.e(TAG, "Error: " + error.getMessage());
                 // unable to fetch wallpapers
                 // either google username is wrong or
@@ -141,16 +141,19 @@ public class ListingsActivity extends AppCompatActivity {
      * Parsing json reponse and passing the data to feed view list adapter
      * */
     private void parseJsonFeed(JSONObject response) {
-        Log.e(TAG, "----------- nothing was ever parsed ------- ");
+        Log.e(TAG, "----------- parsing json ------- ");
         try {
-            JSONArray feedArray = response.getJSONArray("feed");
+            JSONArray feedArray = response.getJSONArray("nairobi");
+
+            Log.e(TAG, "----------- feedArray obtained ------- ");
+
 
             for (int i = 0; i < feedArray.length(); i++) {
                 JSONObject feedObj = (JSONObject) feedArray.get(i);
 
                 Property prop = new Property();
-                prop.setDescription(feedObj.getString("name"));
-                prop.setLocation(feedObj.getString("status"));
+                prop.setDescription(feedObj.getString("description"));
+                prop.setLocation(feedObj.getString("location"));
 
 
                 // Image might be null sometimes
@@ -160,6 +163,7 @@ public class ListingsActivity extends AppCompatActivity {
                 prop.setPhotoId(image);
 
                 properties.add(prop);
+
             }
             Log.e(TAG, "----------- Can you hear me !!!!!!!!! ------- ");
 
