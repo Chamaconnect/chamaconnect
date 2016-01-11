@@ -40,6 +40,7 @@ public class ListingsActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<Property> properties;
     private static final String TAG = "DROGO";
+    PropertyAdapter adapter;
     private String URL_FEED = "http://colleowino.github.io/hauz/img/api/feed.json";
 
     @SuppressLint("NewApi")
@@ -65,6 +66,10 @@ public class ListingsActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.properties);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(llm);
+
+        adapter = new PropertyAdapter(this, properties);
+
+        recyclerView.setAdapter(adapter);
 
         /**
          * Making volley's json object request to fetch list of photos of an
@@ -105,7 +110,6 @@ public class ListingsActivity extends AppCompatActivity {
 
         Log.e(TAG, "----------- got instance and run it ------- ");
 
-        PropertyAdapter adapter = new PropertyAdapter(this, properties);
 
         // Define click listener for the ViewHolder's View.
         adapter.setListener(new CustomItemClickListener() {
@@ -125,16 +129,8 @@ public class ListingsActivity extends AppCompatActivity {
 
         });
 
-        recyclerView.setAdapter(adapter);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
     }
 
     /**
@@ -146,7 +142,6 @@ public class ListingsActivity extends AppCompatActivity {
             JSONArray feedArray = response.getJSONArray("nairobi");
 
             Log.e(TAG, "----------- feedArray obtained ------- ");
-
 
             for (int i = 0; i < feedArray.length(); i++) {
                 JSONObject feedObj = (JSONObject) feedArray.get(i);
@@ -165,10 +160,10 @@ public class ListingsActivity extends AppCompatActivity {
                 properties.add(prop);
 
             }
-            Log.e(TAG, "----------- Can you hear me !!!!!!!!! ------- ");
 
             // notify data changes to list adapater
-            //recyclerView.notifyDataSetChanged();
+            adapter.notifyDataSetChanged();
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
