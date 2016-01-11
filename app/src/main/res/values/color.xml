@@ -13,11 +13,11 @@
     <color name="button_txt">@color/white</color>
 
     <!-- wireframe colors -->
-    <color name="wf_status_bar">0000ff</color>
-    <color name="wf_action_bar">00aaff</color>
-    <color name="wf_button_bg">00aaff</color>
-    <color name="wf_gen_bg">f9f9f9</color>
-    <color name="wf_img_frame">d8d9d9</color>
+    <color name="wf_status_bar">#0000ff</color>
+    <color name="wf_action_bar">#00aaff</color>
+    <color name="wf_button_bg">#00aaff</color>
+    <color name="wf_gen_bg">#f9f9f9</color>
+    <color name="wf_img_frame">#d8d9d9</color>
 
     <!-- listing shadow -->
     <color name="start_color">#90000000</color>
