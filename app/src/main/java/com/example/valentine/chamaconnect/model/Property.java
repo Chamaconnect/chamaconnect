@@ -1,9 +1,12 @@
 package com.example.valentine.chamaconnect.model;
 
+import java.io.Serializable;
+
 /**
  * Created by cliff on 10/01/16.
  */
-public class Property {
+public class Property implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     String location;
     String description;

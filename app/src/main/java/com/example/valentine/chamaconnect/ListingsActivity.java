@@ -121,15 +121,15 @@ public class ListingsActivity extends AppCompatActivity {
 
                 Intent propertyIntent = new Intent(v.getContext(), PropertyActivity.class);
 
-                propertyIntent.putExtra("PROPERTY_ID", clickedItem);
+                // passing the selected property
+                Property property = properties.get(clickedItem);
+                propertyIntent.putExtra(PropertyActivity.TAG_SEL_PROPERTY, property);
 
                 v.getContext().startActivity(propertyIntent);
 
             }
 
         });
-
-
 
     }
 
