@@ -55,7 +55,7 @@
             <EditText android:id="@+id/certificate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
+                android:inputType="file"
                 android:hint="Certificate"/>
         </android.support.design.widget.TextInputLayout>
 
@@ -68,7 +68,7 @@
             <EditText android:id="@+id/input_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
+                android:inputType="file"
                 android:hint="AgreementDocument"/>
         </android.support.design.widget.TextInputLayout>
 
