@@ -1,6 +1,7 @@
 package com.example.valentine.chamaconnect;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -21,9 +22,13 @@ public class SignupActivity extends AppCompatActivity {
     @InjectView(R.id.input_name)
     EditText _nameText;
     @InjectView(R.id.phone) EditText _phone;
-    @InjectView(R.id.input_password) EditText _passwordText;
-    @InjectView(R.id.btn_signup)
-    Button _signupButton;
+    @InjectView(R.id.certificate) EditText _certificate;
+    @InjectView(R.id.agreementdoc) EditText _agreement;
+    @InjectView(R.id.constitution) EditText _constitution;
+    @InjectView(R.id.btn_signup) Button _signupButton;
+    @InjectView(R.id.btn_cert) Button _certButton;
+    @InjectView(R.id.btn_agdoc) Button _agdocButton;
+    @InjectView(R.id.btn_const) Button _constButton;
     @InjectView(R.id.link_login)
     TextView _loginLink;
 
@@ -44,6 +49,8 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Finish the registration screen and return to the Login activity
+                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
@@ -67,7 +74,7 @@ public class SignupActivity extends AppCompatActivity {
 
         String name = _nameText.getText().toString();
         String phone = _phone.getText().toString();
-        String password = _passwordText.getText().toString();
+        String certificate = _certificate.getText().toString();
 
         // TODO: Implement your own signup logic here.
 
@@ -101,7 +108,7 @@ public class SignupActivity extends AppCompatActivity {
 
         String name = _nameText.getText().toString();
         String phone = _phone.getText().toString();
-        String password = _passwordText.getText().toString();
+        String certificate = _certificate.getText().toString();
 
         if (name.isEmpty() || name.length() < 3) {
             _nameText.setError("at least 3 characters");
@@ -117,11 +124,11 @@ public class SignupActivity extends AppCompatActivity {
             _phone.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            _passwordText.setError("between 4 and 10 alphanumeric characters");
+        if (certificate.isEmpty() || certificate.length() < 4 || certificate.length() > 10) {
+            _certificate.setError("between 4 and 10 alphanumeric characters");
             valid = false;
         } else {
-            _passwordText.setError(null);
+            _certificate.setError(null);
         }
 
         return valid;

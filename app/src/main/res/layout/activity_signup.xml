@@ -58,6 +58,11 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:hint="Certificate"/>
+            <Button android:id="@+id/btn_cert"
+                android:layout_toRightOf="@id/certificate"
+                android:text="Upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         </android.support.design.widget.TextInputLayout>
 
         <!-- AgreementDoc Label -->
@@ -72,8 +77,27 @@
                 android:inputType="text"
                 android:hint="AgreementDocument"
                 android:maxLines="1"/>
-            <Button android:id="@+id/search_text"
+            <Button android:id="@+id/btn_agdoc"
                 android:layout_toRightOf="@id/agreementdoc"
+                android:text="Upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- Constituition Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/constitution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Constituition"
+                android:maxLines="1"/>
+            <Button android:id="@+id/btn_const"
+                android:layout_toRightOf="@id/constitution"
                 android:text="Upload"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
