@@ -40,6 +40,7 @@ public class ListingsActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<Property> properties;
     private static final String TAG = "DROGO";
+    private String URL_FEED = "http://colleowino.github.io/hauz/img/api/feed.json";
 
     @SuppressLint("NewApi")
     @Override
@@ -65,11 +66,6 @@ public class ListingsActivity extends AppCompatActivity {
         LinearLayoutManager llm = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(llm);
 
-        //initializeData();
-        //setupVolley();
-
-        Log.e(TAG, "----------- start ------- ");
-
         /**
          * Making volley's json object request to fetch list of photos of an
          * album
@@ -79,7 +75,7 @@ public class ListingsActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(JSONObject response) {
-                Log.e(TAG, "----------- does it ever parse anything ------- ");
+                Log.e(TAG, "----------- creating the jsonrequest ------- ");
 
                 VolleyLog.e(TAG, "Response: " + response.toString());
                 if (response != null) {
@@ -90,7 +86,13 @@ public class ListingsActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, "Error: " + error.getMessage());
                 VolleyLog.e(TAG, "Error: " + error.getMessage());
+                // unable to fetch wallpapers
+                // either google username is wrong or
+                // devices doesn't have internet connection
+                Toast.makeText(getApplicationContext(), "Feeds not loading",
+                        Toast.LENGTH_LONG).show();
             }
         });
 
@@ -134,8 +136,6 @@ public class ListingsActivity extends AppCompatActivity {
             }
         });
     }
-
-    private String URL_FEED = "http://api.androidhive.info/feed/feed.json";
 
     /**
      * Parsing json reponse and passing the data to feed view list adapter
