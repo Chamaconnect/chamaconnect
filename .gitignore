@@ -9,3 +9,8 @@
 app/app.iml
 BPL-ValentineCliff.iml
 .idea/
+/.idea
+.DS_Store
+/build
+/captures
+chamaconnect.iml
