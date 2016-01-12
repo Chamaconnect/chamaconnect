@@ -13,8 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/prop_bar_height"
         android:fitsSystemWindows="true"
-        android:background="@drawable/prop_1"
+        android:layout_margin="0dp"
         android:theme="@style/AppTheme.AppBarOverlay">
+
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -48,6 +49,13 @@
             </android.support.v7.widget.LinearLayoutCompat>
 
         </android.support.v7.widget.Toolbar>
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/header_photo"
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:background="@color/md_teal_50"
+            android:layout_height="match_parent"/>
 
     </android.support.design.widget.AppBarLayout>
 

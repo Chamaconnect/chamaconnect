@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.NetworkImageView;
+import com.example.valentine.chamaconnect.helper.MySingleton;
 import com.example.valentine.chamaconnect.model.Property;
 
 public class PropertyActivity extends AppCompatActivity {
@@ -21,6 +24,8 @@ public class PropertyActivity extends AppCompatActivity {
     private TextView description;
     private AppBarLayout appbar;
     private Property property;
+    private NetworkImageView header;
+    ImageLoader imageLoader = MySingleton.getInstance(this).getImageLoader();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +40,18 @@ public class PropertyActivity extends AppCompatActivity {
         location = (TextView) findViewById(R.id.location);
         description = (TextView) findViewById(R.id.description);
         appbar = (AppBarLayout) findViewById(R.id.app_bar);
+        header = (NetworkImageView) findViewById(R.id.header_photo);
 
         Intent i = getIntent();
         property = (Property) i.getSerializableExtra(TAG_SEL_PROPERTY);
 
         location.setText(property.getLocation());
         description.setText(property.getDescription());
+
+        if (imageLoader == null)
+            imageLoader = MySingleton.getInstance(this).getImageLoader();
+
+        header.setImageUrl(property.getPhotoId(),imageLoader);
 
     }
 }
