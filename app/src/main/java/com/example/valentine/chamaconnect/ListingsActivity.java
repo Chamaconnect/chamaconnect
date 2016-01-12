@@ -14,14 +14,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.Request.Method;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.valentine.chamaconnect.helper.CustomItemClickListener;
+import com.example.valentine.chamaconnect.helper.MySingleton;
 import com.example.valentine.chamaconnect.helper.PropertyAdapter;
 import com.example.valentine.chamaconnect.model.Property;
 
@@ -97,12 +96,9 @@ public class ListingsActivity extends AppCompatActivity {
             }
         });
 
-        Log.e(TAG, "----------- request ready ------- "+ jsonReq.toString());
+        Log.e(TAG, "----------- request ready ------- " + jsonReq.toString());
 
-        RequestQueue mRequestQueue = Volley.newRequestQueue(this);
-        mRequestQueue.add(jsonReq);
-
-        //MySingleton.getInstance(this).addToRequestQueue(jsonReq);
+        MySingleton.getInstance(this).addToRequestQueue(jsonReq);
 
         Log.e(TAG, "----------- got instance and run it ------- ");
 
