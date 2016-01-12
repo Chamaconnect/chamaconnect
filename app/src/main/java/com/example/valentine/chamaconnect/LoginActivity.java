@@ -20,9 +20,13 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
 
-    @InjectView(R.id.input_email)
-    EditText _emailText;
-    @InjectView(R.id.input_password) EditText _passwordText;
+    @InjectView(R.id.account)
+    EditText _account;
+    @InjectView(R.id.code) EditText _activationcode;
+    @InjectView(R.id.idno) EditText _idnumber;
+    @InjectView(R.id.pic) EditText _picture;
+    @InjectView(R.id.btn_pic)
+    Button _picButton;
     @InjectView(R.id.btn_login)
     Button _loginButton;
     @InjectView(R.id.link_signup)
@@ -69,8 +73,10 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
 
-        String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+        String account = _account.getText().toString();
+        String code = _activationcode.getText().toString();
+        String idno = _idnumber.getText().toString();
+        String pic = _picture.getText().toString();
 
         // TODO: Implement your own authentication logic here.
 
@@ -118,21 +124,21 @@ public class LoginActivity extends AppCompatActivity {
     public boolean validate() {
         boolean valid = true;
 
-        String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+        String account = _account.getText().toString();
+        String code = _activationcode.getText().toString();
 
-        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            _emailText.setError("enter a valid email address");
+        if (account.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(account).matches()) {
+            _account.setError("enter account number");
             valid = false;
         } else {
-            _emailText.setError(null);
+            _account.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            _passwordText.setError("between 4 and 10 alphanumeric characters");
+        if (code.isEmpty() || code.length() < 8 || code.length() > 10) {
+            _activationcode.setError("between 4 and 10 alphanumeric characters");
             valid = false;
         } else {
-            _passwordText.setError(null);
+            _activationcode.setError(null);
         }
 
         return valid;
