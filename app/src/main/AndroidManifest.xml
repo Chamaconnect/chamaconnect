@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.valentine.chamaconnect" >
+    package="com.example.valentine.chamaconnect">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />c
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    c
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -11,34 +12,37 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <meta-data
             android:name="com.parse.APPLICATION_ID"
             android:value="usSvkOLma7JHM0Nc8cAAwH5nCI0mULIBpA8UUQhm" />
         <meta-data
             android:name="com.parse.CLIENT_KEY"
             android:value="mLSWLCCzBR9NdRd361CumMDaL6rhkoWBwOJrfdkE" />
+
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
-
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".SignupActivity"
             android:label="@string/title_activity_signup"
             android:theme="@style/AppTheme.Dark">
+
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.Dark"></activity>
+        <activity
+            android:name=".LoanCalcultorActivity"
+            android:label="@string/title_activity_loan_calcultor"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.Dark">
-        </activity>
-
     </application>
 
 </manifest>
