@@ -1,24 +1,19 @@
-package com.example.valentine.chamaconnect;
+package com.example.valentine.chamaconnect.helper;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.NetworkImageView;
-import com.example.valentine.chamaconnect.helper.CustomItemClickListener;
-import com.example.valentine.chamaconnect.helper.MySingleton;
+import com.example.valentine.chamaconnect.R;
 import com.example.valentine.chamaconnect.model.Property;
 
 import com.android.volley.toolbox.ImageLoader;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
