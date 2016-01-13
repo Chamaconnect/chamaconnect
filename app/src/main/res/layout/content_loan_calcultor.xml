@@ -86,7 +86,8 @@
 
             <Button android:text="@string/book"
                 android:layout_column="0"
-                android:layout_span="2" />
+                android:layout_span="2"
+                android:id="@+id/call" />
         </TableRow>
 
 

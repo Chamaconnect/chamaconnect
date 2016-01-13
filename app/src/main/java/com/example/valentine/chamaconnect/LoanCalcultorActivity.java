@@ -1,11 +1,17 @@
 package com.example.valentine.chamaconnect;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,6 +20,8 @@ import java.text.DecimalFormat;
 public class LoanCalcultorActivity extends AppCompatActivity {
     private EditText mLoanAmount, mInterestRate, mLoanPeriod;
     private TextView mMontlyPaymentResult, mTotalPaymentsResult;
+    Button btncall = (Button) findViewById(R.id.call);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,11 +38,23 @@ public class LoanCalcultorActivity extends AppCompatActivity {
             }
         });
 
-        mLoanAmount = (EditText)findViewById(R.id.loan_amount);
-        mInterestRate = (EditText)findViewById(R.id.interest_rate);
-        mLoanPeriod = (EditText)findViewById(R.id.loan_period);
-        mMontlyPaymentResult = (TextView)findViewById(R.id.monthly_payment_result);
-        mTotalPaymentsResult = (TextView)findViewById(R.id.total_payments_result);
+        mLoanAmount = (EditText) findViewById(R.id.loan_amount);
+        mInterestRate = (EditText) findViewById(R.id.interest_rate);
+        mLoanPeriod = (EditText) findViewById(R.id.loan_period);
+        mMontlyPaymentResult = (TextView) findViewById(R.id.monthly_payment_result);
+        mTotalPaymentsResult = (TextView) findViewById(R.id.total_payments_result);
+
+        btncall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String number = "0728057123";
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:" + number));
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
     }
 
