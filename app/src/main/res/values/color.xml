@@ -8,9 +8,15 @@
     <!-- wireframe colors -->
     <color name="status_bar_color">@color/wf_status_bar</color>
     <color name="action_bar_color">@color/wf_action_bar</color>
-    <color name="general_bg">@color/wf_gen_bg</color>
+    <color name="general_bg">#f6f6f6</color>
     <color name="button_bg">@color/wf_button_bg</color>
     <color name="button_txt">@color/white</color>
+
+    <!-- bnb color -->
+    <color name="bnb_dark_text">#595a5c</color>
+    <color name="bnb_light_text">#8e9295</color>
+    <color name="bnb_line">#e0e0e0</color>
+    <color name="bnb_bg">#f6f6f6</color>
 
     <!-- spinner color -->
     <color name="spinner_item_selected_bg">@color/wf_status_bar</color>

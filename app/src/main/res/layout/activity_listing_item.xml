@@ -38,7 +38,7 @@
 
                 <TextView
                     android:id="@+id/description"
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:scrollHorizontally="true"
                     android:ellipsize="end"
                     android:maxLines="1"
@@ -68,13 +68,18 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
+        android:textSize="@dimen/bnb_text_size"
+        android:textColor="@color/bnb_dark_text"
+        android:background="@drawable/border_set"
         android:text="Details"/>
 
         <LinearLayout
             android:orientation="horizontal"
+            android:background="@drawable/border_set"
             android:layout_width="match_parent"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
@@ -85,7 +90,8 @@
                 android:layout_height="match_parent"
                 android:gravity="left"
                 android:layout_weight="1"
-
+                android:textColor="@color/bnb_light_text"
+                android:textSize="@dimen/bnb_text_size"
                 android:text="Price"/>
 
              <TextView
@@ -93,7 +99,65 @@
                  android:layout_height="match_parent"
                  android:gravity="right"
                  android:layout_weight="1"
+                 android:textSize="@dimen/bnb_text_size"
+                 android:textColor="@color/bnb_dark_text"
                  android:text="10,000,000 Ksh"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="@drawable/border_set"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:layout_weight="1"
+                android:textColor="@color/bnb_light_text"
+                android:textSize="@dimen/bnb_text_size"
+                android:text="Accomodates"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:layout_weight="1"
+                android:textSize="@dimen/bnb_text_size"
+                android:textColor="@color/bnb_dark_text"
+                android:text="4"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="@drawable/border_set"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:layout_weight="1"
+                android:textColor="@color/bnb_light_text"
+                android:textSize="@dimen/bnb_text_size"
+                android:text="Bedrooms"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:layout_weight="1"
+                android:textSize="@dimen/bnb_text_size"
+                android:textColor="@color/bnb_dark_text"
+                android:text="1"/>
 
         </LinearLayout>
 

@@ -19,5 +19,7 @@
     <!-- property page -->
     <dimen name="prop_bar_height">250dp</dimen>
     <dimen name="title_bar_top_margin">20dp</dimen>
+    <dimen name="bnb_text_size">18sp</dimen>
+    <dimen name="bnb_padding">5dp</dimen>
 
 </resources>
