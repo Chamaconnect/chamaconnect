@@ -74,6 +74,22 @@
                 android:textColor="#ff0000"
                 android:gravity="left"/>
         </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button android:text="@string/book"
+                android:layout_column="0"
+                android:layout_span="2" />
+        </TableRow>
+
+
     </TableLayout>
 
 </RelativeLayout>

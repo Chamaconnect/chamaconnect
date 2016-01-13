@@ -3,6 +3,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="book">Book Appointment</string>
     <string name="title_activity_signup">Signup</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_loan_calcultor">LoanCalcultorActivity</string>
