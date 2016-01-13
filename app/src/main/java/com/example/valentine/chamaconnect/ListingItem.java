@@ -39,7 +39,6 @@ public class ListingItem extends AppCompatActivity {
 
         location = (TextView) findViewById(R.id.location);
         description = (TextView) findViewById(R.id.description);
-        appbar = (AppBarLayout) findViewById(R.id.app_bar);
         header = (NetworkImageView) findViewById(R.id.header_photo);
 
         Intent i = getIntent();
