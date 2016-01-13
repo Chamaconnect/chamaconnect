@@ -42,7 +42,7 @@ public class ListingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_toolbar);
+        setContentView(R.layout.activity_listings);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Chama");
         toolbar.setLogo(R.drawable.ic_action_appbar_icon);
