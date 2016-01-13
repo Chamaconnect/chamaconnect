@@ -1,6 +1,7 @@
 package com.example.valentine.chamaconnect;
 
 import android.Manifest;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -10,17 +11,19 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
 public class LoanCalcultorActivity extends AppCompatActivity {
     private EditText mLoanAmount, mInterestRate, mLoanPeriod;
     private TextView mMontlyPaymentResult, mTotalPaymentsResult;
-    Button btncall = (Button) findViewById(R.id.call);
+    private Button btncall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,34 +32,40 @@ public class LoanCalcultorActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         mLoanAmount = (EditText) findViewById(R.id.loan_amount);
         mInterestRate = (EditText) findViewById(R.id.interest_rate);
         mLoanPeriod = (EditText) findViewById(R.id.loan_period);
         mMontlyPaymentResult = (TextView) findViewById(R.id.monthly_payment_result);
         mTotalPaymentsResult = (TextView) findViewById(R.id.total_payments_result);
+        btncall = (Button) findViewById(R.id.call);
+
 
         btncall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String number = "0728057123";
-                Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:" + number));
-                startActivity(intent);
-                finish();
-            }
-        });
 
+                                               @Override
+                                               public void onClick(View arg0) {
+                                                   try {
+                                                       String number = "0728057123";
+                                                       Intent callIntent = new Intent(Intent.ACTION_CALL);
+                                                       callIntent.setData(Uri.parse("tel:" + number));
+                                                       startActivity(callIntent);
+                                                   } catch(Exception e) {
+
+                                                       Toast.makeText(getApplicationContext(),"Your call has failed...",
+
+                                                               Toast.LENGTH_LONG).show();
+
+                                                       e.printStackTrace();
+
+                                                   }
+
+                                               }
 
     }
+
+    );
+}
 
     public void showLoanPayments(View clickedButton) {
 

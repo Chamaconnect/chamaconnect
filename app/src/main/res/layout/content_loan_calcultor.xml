@@ -48,7 +48,9 @@
         <TableRow>
             <Button android:text="@string/loan_button_text"
                 android:layout_span="2"
+                android:background="@color/primary_dark"
                 android:layout_width="match_parent"
+                android:textColor="@color/white"
                 android:layout_height="wrap_content"
                 android:onClick="showLoanPayments"/>
         </TableRow>
@@ -87,6 +89,8 @@
             <Button android:text="@string/book"
                 android:layout_column="0"
                 android:layout_span="2"
+                android:textColor="@color/white"
+                android:background="@color/primary_dark"
                 android:id="@+id/call" />
         </TableRow>
 

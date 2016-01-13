@@ -38,10 +38,14 @@
     <!--<color name="primary">#0277BD</color>-->
     <!--<color name="primary_dark">#388E3C</color>-->
     <!--<color name="primary_darker">#1B5E20</color>-->
-    <color name="primary">#1E88E5</color>
-    <color name="primary_dark">#1565C0</color>
-    <color name="primary_darker">#0D47A1</color>
-    <color name="accent">#FFFFFF</color>
+    <color name="primary">#2DEA8F</color>
+    <color name="primary_dark">#24B273</color>
+    <color name="primary_darker">#167A8B</color>
+    <color name="accent">#243D44</color>
+    <!--<color name="primary">#1E88E5</color>-->
+    <!--<color name="primary_dark">#1565C0</color>-->
+    <!--<color name="primary_darker">#0D47A1</color>-->
+    <!--<color name="accent">#FFFFFF</color>-->
 
     <color name="jet">#222222</color>
     <color name="oil">#333333</color>
