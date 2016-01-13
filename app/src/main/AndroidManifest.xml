@@ -31,6 +31,11 @@
             android:name=".SignupActivity"
             android:label="@string/title_activity_signup"
             android:theme="@style/AppTheme.Dark">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
 
         <activity
@@ -42,11 +47,7 @@
             android:name=".LoanCalcultorActivity"
             android:label="@string/title_activity_loan_calcultor"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
 
         <activity
