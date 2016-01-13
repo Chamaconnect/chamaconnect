@@ -5,3 +5,12 @@
 .DS_Store
 /build
 /captures
+.idea/runConfigurations.xml
+app/app.iml
+BPL-ValentineCliff.iml
+.idea/
+/.idea
+.DS_Store
+/build
+/captures
+chamaconnect.iml
