@@ -115,4 +115,14 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
 
+    <string name="title_activity_signup">Signup</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_loan_calcultor">LoanCalcultorActivity</string>
+    <string name="loan_amount_prompt">Loan amount:&#160;&#160;</string>
+    <string name="interest_rate_prompt">Interest rate:&#160;&#160;</string>
+    <string name="loan_period_prompt">Months:&#160;&#160;</string>
+    <string name="loan_button_text">Calculate Payments</string>
+    <string name="monthly_payment_prompt">Monthly payment:&#160;&#160;</string>
+    <string name="total_payments_prompt">Total payments:&#160;&#160;</string>
+
 </resources>
