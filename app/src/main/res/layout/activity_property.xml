@@ -50,12 +50,7 @@
 
         </android.support.v7.widget.Toolbar>
 
-        <com.android.volley.toolbox.NetworkImageView
-            android:id="@+id/header_photo"
-            android:layout_width="match_parent"
-            android:scaleType="centerCrop"
-            android:background="@color/md_teal_50"
-            android:layout_height="match_parent"/>
+
 
     </android.support.design.widget.AppBarLayout>
 
