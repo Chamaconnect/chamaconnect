@@ -111,11 +111,11 @@ public class ListingsActivity extends AppCompatActivity {
                 int clickedItem = position;
                 Log.e("DROGO", "Element " + clickedItem + " clicked.");
 
-                Intent propertyIntent = new Intent(v.getContext(), PropertyActivity.class);
+                Intent propertyIntent = new Intent(v.getContext(), ListingItem.class);
 
                 // passing the selected property
                 Property property = properties.get(clickedItem);
-                propertyIntent.putExtra(PropertyActivity.TAG_SEL_PROPERTY, property);
+                propertyIntent.putExtra(ListingItem.TAG_SEL_PROPERTY, property);
 
                 v.getContext().startActivity(propertyIntent);
 

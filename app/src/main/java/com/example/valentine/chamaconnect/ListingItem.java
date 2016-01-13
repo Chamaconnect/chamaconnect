@@ -17,7 +17,7 @@ import com.android.volley.toolbox.NetworkImageView;
 import com.example.valentine.chamaconnect.helper.MySingleton;
 import com.example.valentine.chamaconnect.model.Property;
 
-public class PropertyActivity extends AppCompatActivity {
+public class ListingItem extends AppCompatActivity {
     public static final String TAG_SEL_PROPERTY = "selectedProperty";
 
     private TextView location;
