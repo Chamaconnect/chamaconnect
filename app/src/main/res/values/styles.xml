@@ -29,8 +29,6 @@
         <item name="colorControlHighlight">@color/jet</item>
         <item name="android:textColorHint">@color/jet</item>
 
-        <item name="colorButtonNormal">@color/primary_darker</item>
-        <item name="android:colorButtonNormal" tools:ignore="NewApi">@color/primary_darker</item>
     </style>
 
     <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
