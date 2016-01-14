@@ -14,6 +14,7 @@
 	    <item name="android:layout_gravity">bottom</item>
 	    <item name="android:paddingLeft">10dp</item>
 	    <item name="android:paddingRight">10dp</item>
+	    <item name="android:paddingBottom">10dp</item>
 	    <item name="android:background">@drawable/property_shadow</item>
 	</style>
 
@@ -48,7 +49,7 @@
 	    <item name="android:textSize">15sp</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:layout_marginBottom">2dp</item>
-	    <item name="android:textColor">@color/light_green</item>
+	    <item name="android:textColor">@color/grey_400</item>
 	</style>
-
+x`
 </resources>
