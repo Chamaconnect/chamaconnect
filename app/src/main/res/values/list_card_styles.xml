@@ -3,7 +3,7 @@
 	<!-- styles applied to the property cards. -->
   <style name="listing_card_image">
     <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">250dp</item>
+    <item name="android:layout_height">match_parent</item>
     <item name="android:scaleType">centerCrop</item>
 	</style>
 
@@ -12,8 +12,8 @@
       <item name="android:layout_width">match_parent</item>
 	    <item name="android:layout_height">wrap_content</item>
 	    <item name="android:layout_gravity">bottom</item>
-	    <item name="android:layout_marginLeft">5dp</item>
-	    <item name="android:layout_marginRight">5dp</item>
+	    <item name="android:paddingLeft">10dp</item>
+	    <item name="android:paddingRight">10dp</item>
 	    <item name="android:background">@drawable/property_shadow</item>
 	</style>
 
@@ -21,8 +21,9 @@
 	    <item name="android:layout_width">match_parent</item>
 	    <item name="android:layout_height">wrap_content</item>
 	    <item name="android:layout_gravity">right</item>
-	    <item name="android:text">KAREN</item>
-	    <item name="android:textSize">16sp</item>
+	    <item name="android:textSize">14sp</item>
+	    <item name="android:textAllCaps">true</item>
+	    <item name="android:textColor">@color/white</item>
 	    <item name="android:background">@drawable/white_border_set</item>
 	</style>
 
@@ -30,9 +31,13 @@
 	    <item name="android:layout_width">match_parent</item>
 	    <item name="android:layout_height">wrap_content</item>
 	    <item name="android:layout_gravity">right</item>
-	    <item name="android:text">The waterman business park</item>
-	    <item name="android:textSize">22sp</item>
-	    <item name="android:background">@drawable/white_border_set</item>
+	   	<item name="android:layout_marginTop">2dp</item>
+	    <item name="android:layout_marginBottom">2dp</item>
+	    <item name="android:maxLines">1</item>
+		<item name="android:ellipsize">end</item>
+	    <item name="android:textSize">20sp</item>
+	    <item name="android:textStyle">bold</item>
+	    <item name="android:textColor">@color/white</item>
 	</style>
 
 	<style name="list_card_price">
@@ -40,8 +45,10 @@
 	    <item name="android:layout_height">wrap_content</item>
 	    <item name="android:layout_gravity">right</item>
 	    <item name="android:text">6,000,000 Ksh</item>
-	    <item name="android:textSize">14sp</item>
-	    <item name="android:background">@drawable/white_border_set</item>
+	    <item name="android:textSize">15sp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:layout_marginBottom">2dp</item>
+	    <item name="android:textColor">@color/light_green</item>
 	</style>
 
 </resources>

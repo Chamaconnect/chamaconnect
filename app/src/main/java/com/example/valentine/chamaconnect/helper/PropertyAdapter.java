@@ -52,7 +52,7 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
 
     @Override
     public PropertyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.property_card, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.listing_card, viewGroup, false);
         final PropertyViewHolder pvh = new PropertyViewHolder(v);
         v.setOnClickListener(new View.OnClickListener() {
             @Override
