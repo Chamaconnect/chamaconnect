@@ -7,6 +7,7 @@
     <!-- card details -->
     <dimen name="property_height">200dp</dimen>
     <dimen name="card_bottom_margin">10dp</dimen>
+    <dimen name="side_margin">10dp</dimen>
 
     <!-- spinner -->
     <dimen name="spinner_item_top_padding">5dp</dimen>
