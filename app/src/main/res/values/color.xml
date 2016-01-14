@@ -8,7 +8,7 @@
     <!-- wireframe colors -->
     <color name="status_bar_color">@color/wf_status_bar</color>
     <color name="action_bar_color">@color/wf_action_bar</color>
-    <color name="general_bg">@color/reid_grey_600</color>
+    <color name="general_bg">#f6f6f6</color>
     <color name="button_bg">@color/wf_button_bg</color>
     <color name="button_txt">@color/white</color>
 
@@ -52,10 +52,10 @@
     <color name="dark_blue">#243D44</color>
 
     <!-- theme colors-->
-    <color name="primary">#2DEA8F</color>
-    <color name="primary_dark">#24B273</color>
-    <color name="primary_darker">#167A8B</color>
-    <color name="accent">#243D44</color>
+    <color name="primary">@color/reid_light_green</color>
+    <color name="primary_dark">@color/reid_dark_green</color>
+    <color name="primary_darker">@color/reid_dark_blue_600</color>
+    <color name="accent">@color/reid_dark_blue_800</color>
 
     <color name="jet">#222222</color>
     <color name="oil">#333333</color>
