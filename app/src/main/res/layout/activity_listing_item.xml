@@ -27,13 +27,15 @@
             android:layout_width="match_parent"
             android:elevation="5dp"
             android:paddingTop="3dp"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
             app:layout_collapseMode="pin"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
             <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:orientation="vertical"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:layout_height="match_parent">
 
                 <TextView
@@ -43,6 +45,7 @@
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:textSize="18sp"
+                    android:textStyle="bold"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"/>
 
@@ -71,6 +74,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
+        android:textStyle="bold"
         android:gravity="center"
         android:textSize="@dimen/bnb_text_size"
         android:textColor="@color/bnb_dark_text"
