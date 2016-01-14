@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <android.support.v7.widget.LinearLayoutCompat
+    <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -76,6 +76,19 @@
         android:textColor="@color/bnb_dark_text"
         android:background="@drawable/border_set"
         android:text="Details"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+
+            <!-- this is to make the details scrollable -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:scrollbars="vertical" >
+
 
         <LinearLayout
             android:orientation="horizontal"
@@ -161,7 +174,67 @@
 
         </LinearLayout>
 
-    </android.support.v7.widget.LinearLayoutCompat>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="@drawable/border_set"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:layout_weight="1"
+                android:textColor="@color/bnb_light_text"
+                android:textSize="@dimen/bnb_text_size"
+                android:text="Showers"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:layout_weight="1"
+                android:textSize="@dimen/bnb_text_size"
+                android:textColor="@color/bnb_dark_text"
+                android:text="2"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="@drawable/border_set"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:layout_weight="1"
+                android:textColor="@color/bnb_light_text"
+                android:textSize="@dimen/bnb_text_size"
+                android:text="Bathrooms"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:layout_weight="1"
+                android:textSize="@dimen/bnb_text_size"
+                android:textColor="@color/bnb_dark_text"
+                android:text="4"/>
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
 
     <Button
         android:layout_width="match_parent"
