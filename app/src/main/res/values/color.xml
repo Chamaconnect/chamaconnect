@@ -19,8 +19,8 @@
     <color name="bnb_bg">#f6f6f6</color>
 
     <!-- spinner color -->
-    <color name="spinner_item_selected_bg">@color/wf_status_bar</color>
-    <color name="spinner_item_bg">@color/wf_action_bar</color>
+    <color name="spinner_item_selected_bg">@color/accent</color>
+    <color name="spinner_item_bg">@color/primary_dark</color>
     <color name="spinner_item_text">@color/white</color>
 
     <!-- wireframe colors -->
