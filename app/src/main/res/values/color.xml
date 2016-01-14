@@ -8,7 +8,7 @@
     <!-- wireframe colors -->
     <color name="status_bar_color">@color/wf_status_bar</color>
     <color name="action_bar_color">@color/wf_action_bar</color>
-    <color name="general_bg">#f6f6f6</color>
+    <color name="general_bg">@color/reid_grey_600</color>
     <color name="button_bg">@color/wf_button_bg</color>
     <color name="button_txt">@color/white</color>
 
@@ -17,6 +17,17 @@
     <color name="bnb_light_text">#8e9295</color>
     <color name="bnb_line">#e0e0e0</color>
     <color name="bnb_bg">#f6f6f6</color>
+
+    <!-- reid colors -->
+    <color name="reid_dark_green">#1d9c19</color>
+    <color name="reid_light_green">#21b11e</color>
+    <color name="reid_grey_100">#f7f7f7</color>
+    <color name="reid_grey_300">#f2f2f2</color>
+    <color name="reid_grey_600">#e1e1e1</color>
+    <color name="reid_grey_800">#787878</color>
+    <color name="reid_light_blue">#5469e8</color>
+    <color name="reid_dark_blue_600">#3c4a55</color>
+    <color name="reid_dark_blue_800">#36434c</color>
 
     <!-- spinner color -->
     <color name="spinner_item_selected_bg">@color/accent</color>
