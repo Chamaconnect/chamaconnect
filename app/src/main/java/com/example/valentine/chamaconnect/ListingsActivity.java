@@ -45,7 +45,7 @@ public class ListingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_listings);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Chama");
-        toolbar.setLogo(R.drawable.ic_action_appbar_icon);
+        toolbar.setLogo(R.drawable.logo);
         setSupportActionBar(toolbar);
 
         properties = new ArrayList<Property>(); // I hate the null values

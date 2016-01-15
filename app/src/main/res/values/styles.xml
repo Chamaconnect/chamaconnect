@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <!-- Customize your theme here. -->
+
     </style>
 
 
@@ -29,6 +30,8 @@
         <item name="colorControlHighlight">@color/jet</item>
         <item name="android:textColorHint">@color/jet</item>
 
+        <item name="colorButtonNormal">@color/accent</item>
+        <item name="android:colorButtonNormal" tools:ignore="NewApi">@color/accent</item>
     </style>
 
     <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
