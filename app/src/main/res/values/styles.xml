@@ -5,6 +5,9 @@
         <item name="colorPrimary">@color/light_green</item>
         <item name="colorPrimaryDark">@color/dark_blue</item>
         <item name="android:elevation" tools:targetApi="lollipop">0dp</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/accent</item>
+        <item name="android:textColorHint">@color/white</item>
         <!-- Customize your theme here. -->
 
     </style>

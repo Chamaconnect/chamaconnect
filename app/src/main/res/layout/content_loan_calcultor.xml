@@ -15,37 +15,46 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:stretchColumns="1"
+        android:background="@color/primary"
         android:shrinkColumns="1">
         <TableRow>
-            <TextView android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <TextView android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
                 android:text="@string/loan_amount_prompt"
                 android:gravity="right"/>
             <EditText android:id="@+id/loan_amount"
                 android:inputType="numberDecimal"
+                android:textColorHighlight="@color/white"
                 android:layout_height="wrap_content">
                 <requestFocus></requestFocus>
             </EditText>
         </TableRow>
         <TableRow>
-            <TextView android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <TextView android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
                 android:text="@string/interest_rate_prompt"
                 android:gravity="right"/>
             <EditText android:id="@+id/interest_rate"
                 android:inputType="numberDecimal"
+                android:textColorHighlight="@color/white"
+
                 android:layout_height="wrap_content"/>
         </TableRow>
         <TableRow>
-            <TextView android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <TextView android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
                 android:text="@string/loan_period_prompt"
                 android:gravity="right"/>
             <EditText android:id="@+id/loan_period"
                 android:inputType="number"
+                android:textColorHighlight="@color/white"
                 android:layout_height="wrap_content"/>
         </TableRow>
-        <TableRow>
+        <TableRow android:layout_marginTop="50dp">
             <Button android:text="@string/loan_button_text"
                 android:layout_span="2"
                 android:background="@color/accent"
@@ -57,34 +66,39 @@
         <TableRow android:layout_marginTop="20dp">
             <TextView android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:text="@string/monthly_payment_prompt"
                 android:gravity="right"/>
             <TextView android:id="@+id/monthly_payment_result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#ff0000"
+                android:textColor="@color/accent"
                 android:gravity="left"/>
         </TableRow>
         <TableRow>
             <TextView android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:text="@string/total_payments_prompt"
                 android:gravity="right"/>
             <TextView android:id="@+id/total_payments_result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#ff0000"
+                android:textColor="@color/accent"
                 android:gravity="left"/>
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></TableRow>
+            android:layout_height="match_parent">
+
+        </TableRow>
 
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="100dp">
 
             <Button android:text="@string/book"
                 android:layout_column="0"
