@@ -31,8 +31,8 @@
     <color name="reid_dark_blue_800">#36434c</color>
 
     <!-- spinner color -->
-    <color name="spinner_item_selected_bg">@color/accent</color>
-    <color name="spinner_item_bg">@color/primary_dark</color>
+    <color name="spinner_item_selected_bg">@color/primary_dark</color>
+    <color name="spinner_item_bg">@color/primary</color>
     <color name="spinner_item_text">@color/white</color>
 
     <!-- wireframe colors -->
@@ -54,10 +54,10 @@
 
     <!-- theme colors-->
     <!-- Colors selected through materialize palatte. -->
-    <color name="primary">#4CAF50</color>
-    <color name="primary_dark">#388E3C</color>
-    <color name="primary_light">#C8E6C9</color>
-    <color name="accent">#009688</color>
+    <color name="primary">#009688</color>
+    <color name="primary_dark">#00796B</color>
+    <color name="primary_light">#B2DFDB</color>
+    <color name="accent">#536DFE</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
     <color name="icons">#FFFFFF</color>
