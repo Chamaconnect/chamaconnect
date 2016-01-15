@@ -118,8 +118,8 @@
     </string>
 
     <string name="title_activity_signup">Signup</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="title_activity_loan_calcultor">LoanCalcultorActivity</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_loan_calcultor">Loan Calculator</string>
     <string name="loan_amount_prompt">Loan amount:&#160;&#160;</string>
     <string name="interest_rate_prompt">Interest rate:&#160;&#160;</string>
     <string name="loan_period_prompt">Months:&#160;&#160;</string>
