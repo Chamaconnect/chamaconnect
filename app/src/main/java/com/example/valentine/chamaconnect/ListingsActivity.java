@@ -45,7 +45,7 @@ public class ListingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_listings);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Chama");
-        toolbar.setLogo(R.drawable.logo);
+        toolbar.setLogo(R.mipmap.ic_launcher);
         setSupportActionBar(toolbar);
 
         properties = new ArrayList<Property>(); // I hate the null values
