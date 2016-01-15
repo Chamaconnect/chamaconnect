@@ -4,8 +4,9 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/light_green</item>
         <item name="colorPrimaryDark">@color/dark_blue</item>
-        <item name="android:elevation">0dp</item>
+        <item name="android:elevation" tools:targetApi="lollipop">0dp</item>
         <!-- Customize your theme here. -->
+
     </style>
 
      <style name="applicationTheme" parent="@android:style/Theme.Holo.Light">
@@ -29,8 +30,8 @@
         <item name="colorControlHighlight">@color/jet</item>
         <item name="android:textColorHint">@color/jet</item>
 
-        <item name="colorButtonNormal">@color/primary_darker</item>
-        <item name="android:colorButtonNormal" tools:ignore="NewApi">@color/primary_darker</item>
+        <item name="colorButtonNormal">@color/accent</item>
+        <item name="android:colorButtonNormal" tools:ignore="NewApi">@color/accent</item>
     </style>
 
     <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">

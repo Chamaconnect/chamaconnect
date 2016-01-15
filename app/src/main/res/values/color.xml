@@ -6,15 +6,15 @@
     <!-- http://www.google.com/design/spec/style/color.html#color-color-palette -->
 
     <!-- wireframe colors -->
-    <color name="status_bar_color">@color/wf_status_bar</color>
-    <color name="action_bar_color">@color/wf_action_bar</color>
+    <color name="status_bar_color">@color/primary_dark</color>
+    <color name="action_bar_color">@color/primary</color>
     <color name="general_bg">@color/wf_gen_bg</color>
-    <color name="button_bg">@color/wf_button_bg</color>
+    <color name="button_bg">@color/accent</color>
     <color name="button_txt">@color/white</color>
 
     <!-- spinner color -->
-    <color name="spinner_item_selected_bg">@color/wf_status_bar</color>
-    <color name="spinner_item_bg">@color/wf_action_bar</color>
+    <color name="spinner_item_selected_bg">@color/primary_dark</color>
+    <color name="spinner_item_bg">@color/primary</color>
     <color name="spinner_item_text">@color/white</color>
 
     <!-- wireframe colors -->
@@ -34,18 +34,20 @@
     <color name="light_blue">#167A8B</color>
     <color name="dark_blue">#243D44</color>
 
-    <!--<color name="primary">#4CAF50</color>-->
-    <!--<color name="primary">#0277BD</color>-->
-    <!--<color name="primary_dark">#388E3C</color>-->
-    <!--<color name="primary_darker">#1B5E20</color>-->
-    <color name="primary">#2DEA8F</color>
-    <color name="primary_dark">#24B273</color>
-    <color name="primary_darker">#167A8B</color>
-    <color name="accent">#243D44</color>
-    <!--<color name="primary">#1E88E5</color>-->
-    <!--<color name="primary_dark">#1565C0</color>-->
-    <!--<color name="primary_darker">#0D47A1</color>-->
-    <!--<color name="accent">#FFFFFF</color>-->
+    <!--<color name="primary">#2DEA8F</color>-->
+    <!--<color name="primary_dark">#00695C</color>-->
+    <!--<color name="primary_darker">#167A8B</color>-->
+    <!--<color name="accent">#243D44</color>-->
+
+    <color name="primary">#009688</color>
+    <color name="primary_dark">#00796B</color>
+    <color name="primary_light">#B2DFDB</color>
+    <color name="accent">#8BC34A</color>
+    <!--<color name="accent">#FFC107</color>-->
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
 
     <color name="jet">#222222</color>
     <color name="oil">#333333</color>
