@@ -1,6 +1,7 @@
 package com.example.valentine.chamaconnect;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -33,13 +35,52 @@ public class SignupActivity extends AppCompatActivity {
     @InjectView(R.id.btn_const) Button _constButton;
     @InjectView(R.id.link_login)
     TextView _loginLink;
-
+//    EditText certificate;
+//    EditText _agreement;
+   Context mContext = SignupActivity.this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         ButterKnife.inject(this);
 
+
+        _certButton.setOnClickListener(new View.OnClickListener() {
+            String mChosenDir;
+
+            @Override
+            public void onClick(View v) {
+                SimpleFileChooserDialog myDialog = new SimpleFileChooserDialog(mContext, SimpleFileChooserDialog.FILE_SAVE, new SimpleFileChooserDialog.SimpleFileDialogListener() {
+                    @Override
+                    public void onPositiveButton(String chosenDir) {
+                        _certificate.setText(chosenDir);
+                        Toast.makeText(mContext, "Path to save file: " + chosenDir, Toast.LENGTH_LONG).show();
+                    }
+                });
+                ArrayList<String> myExts = new ArrayList<>();
+                myExts.add(".jpg");
+                myExts.add(".jpeg");
+                myExts.add(".png");
+                myDialog.mAllowedFileExtsList = myExts;
+                myDialog.chooseFile_or_Dir();
+            }
+        });
+
+       _agdocButton.setOnClickListener(new View.OnClickListener() {
+            String mChosenDir;
+
+            @Override
+            public void onClick(View v) {
+                SimpleFileChooserDialog myDialog = new SimpleFileChooserDialog(SignupActivity.this, SimpleFileChooserDialog.FOLDER_SELECT, new SimpleFileChooserDialog.SimpleFileDialogListener() {
+                    @Override
+                    public void onPositiveButton(String chosenDir) {
+                       _agreement.setText(chosenDir);
+                        Toast.makeText(mContext, "ChosenDir: " + chosenDir, Toast.LENGTH_SHORT).show();
+                    }
+                });
+                myDialog.chooseFile_or_Dir();
+            }
+        });
 
         _signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
