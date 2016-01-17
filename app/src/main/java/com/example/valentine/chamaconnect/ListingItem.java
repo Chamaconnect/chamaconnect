@@ -18,6 +18,8 @@ import com.android.volley.toolbox.NetworkImageView;
 import com.example.valentine.chamaconnect.helper.MySingleton;
 import com.example.valentine.chamaconnect.model.Property;
 
+import java.util.ArrayList;
+
 public class ListingItem extends AppCompatActivity {
     public static final String TAG_SEL_PROPERTY = "selectedProperty";
 
@@ -61,5 +63,20 @@ public class ListingItem extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_cogwheel, menu);
 
         return true;
+    }
+
+    public void loadPhotos(View view){
+        Log.e("DROGO", "should be loading right about now");
+
+        ArrayList<String> images = new ArrayList<String>();
+        images.add("http://colleowino.github.io/hauz/img/api/props/p1540_5.jpg");
+        images.add("http://colleowino.github.io/hauz/img/api/props/p1465_1.jpg");
+        images.add("http://colleowino.github.io/hauz/img/api/props/p1691_2.jpg");
+        images.add("http://colleowino.github.io/hauz/img/api/props/p1718_1.jpg");
+        images.add("http://colleowino.github.io/hauz/img/api/props/p1540_5.jpg");
+        Intent intent = new Intent(ListingItem.this, GalleryActivity.class);
+        intent.putStringArrayListExtra(GalleryActivity.EXTRA_NAME, images);
+        startActivity(intent);
+
     }
 }
