@@ -1,6 +1,7 @@
 package com.example.valentine.chamaconnect;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -31,18 +34,44 @@ public class LoginActivity extends AppCompatActivity {
     Button _loginButton;
     @InjectView(R.id.link_signup)
     TextView _signupLink;
-
+    Context mContext=LoginActivity.this;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.inject(this);
 
+
+        _picButton.setOnClickListener(new View.OnClickListener() {
+            String mChosenDir;
+
+            @Override
+            public void onClick(View v) {
+                SimpleFileChooserDialog myDialog = new SimpleFileChooserDialog(mContext, SimpleFileChooserDialog.FILE_SELECT, new SimpleFileChooserDialog.SimpleFileDialogListener() {
+                    @Override
+                    public void onPositiveButton(String chosenDir) {
+                        _picture.setText(chosenDir);
+                        Toast.makeText(mContext, "Chosen file: " + chosenDir, Toast.LENGTH_SHORT).show();
+                    }
+                });
+                ArrayList<String> myExts = new ArrayList<>();
+                myExts.add(".jpg");
+                myExts.add(".jpeg");
+                myExts.add(".png");
+                myDialog.mAllowedFileExtsList = myExts;
+                myDialog.chooseFile_or_Dir();
+            }
+        });
+
+
         _loginButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 login();
+                Intent intent = new Intent(LoginActivity.this, ListingsActivity.class);
+                startActivity(intent);
+
             }
         });
 
@@ -60,10 +89,10 @@ public class LoginActivity extends AppCompatActivity {
     public void login() {
         Log.d(TAG, "Login");
 
-        if (!validate()) {
-            onLoginFailed();
-            return;
-        }
+//        if (!validate()) {
+//            onLoginFailed();
+//            return;
+//        }
 
         _loginButton.setEnabled(false);
 
@@ -120,28 +149,28 @@ public class LoginActivity extends AppCompatActivity {
 
         _loginButton.setEnabled(true);
     }
-
-    public boolean validate() {
-        boolean valid = true;
-
-        String account = _account.getText().toString();
-        String code = _activationcode.getText().toString();
-
-        if (account.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(account).matches()) {
-            _account.setError("enter account number");
-            valid = false;
-        } else {
-            _account.setError(null);
-        }
-
-        if (code.isEmpty() || code.length() < 8 || code.length() > 10) {
-            _activationcode.setError("between 4 and 10 alphanumeric characters");
-            valid = false;
-        } else {
-            _activationcode.setError(null);
-        }
-
-        return valid;
-    }
+//
+//    public boolean validate() {
+//        boolean valid = true;
+//
+//        String account = _account.getText().toString();
+//        String code = _activationcode.getText().toString();
+//
+//        if (account.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(account).matches()) {
+//            _account.setError("enter account number");
+//            valid = false;
+//        } else {
+//            _account.setError(null);
+//        }
+//
+//        if (code.isEmpty() || code.length() < 8 || code.length() > 10) {
+//            _activationcode.setError("between 4 and 10 alphanumeric characters");
+//            valid = false;
+//        } else {
+//            _activationcode.setError(null);
+//        }
+//
+//        return valid;
+//    }
 
 }
