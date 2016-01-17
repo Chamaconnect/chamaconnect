@@ -69,11 +69,11 @@ public class ListingItem extends AppCompatActivity {
         Log.e("DROGO", "should be loading right about now");
 
         ArrayList<String> images = new ArrayList<String>();
-        images.add("http://sourcey.com/images/stock/salvador-dali-metamorphosis-of-narcissus.jpg");
-        images.add("http://sourcey.com/images/stock/salvador-dali-the-dream.jpg");
-        images.add("http://sourcey.com/images/stock/salvador-dali-persistence-of-memory.jpg");
-        images.add("http://sourcey.com/images/stock/simpsons-persistence-of-memory.jpg");
-        images.add("http://sourcey.com/images/stock/salvador-dali-the-great-masturbator.jpg");
+        images.add("http://colleowino.github.io/hauz/img/api/props/p1540_5.jpg");
+        images.add("http://colleowino.github.io/hauz/img/api/props/p1465_1.jpg");
+        images.add("http://colleowino.github.io/hauz/img/api/props/p1691_2.jpg");
+        images.add("http://colleowino.github.io/hauz/img/api/props/p1718_1.jpg");
+        images.add("http://colleowino.github.io/hauz/img/api/props/p1540_5.jpg");
         Intent intent = new Intent(ListingItem.this, GalleryActivity.class);
         intent.putStringArrayListExtra(GalleryActivity.EXTRA_NAME, images);
         startActivity(intent);
