@@ -13,10 +13,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class SignupActivity extends AppCompatActivity implements View.OnClickListener {
+public class SignupActivity extends AppCompatActivity {
     private static final String TAG = "SignupActivity";
 
     @InjectView(R.id.input_name)
@@ -38,10 +40,14 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_signup);
         ButterKnife.inject(this);
 
+
         _signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signup();
+                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -55,6 +61,8 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
             }
         });
     }
+
+
 
     public void signup() {
         Log.d(TAG, "Signup");
@@ -158,8 +166,5 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onClick(View v) {
 
-    }
 }
