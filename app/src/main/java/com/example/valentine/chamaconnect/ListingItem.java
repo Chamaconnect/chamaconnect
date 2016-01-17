@@ -62,4 +62,8 @@ public class ListingItem extends AppCompatActivity {
 
         return true;
     }
+
+    public void loadPhotos(View view){
+        Log.d("DROGO","should be loading right about now");
+    }
 }

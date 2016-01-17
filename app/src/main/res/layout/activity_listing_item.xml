@@ -62,11 +62,31 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <com.android.volley.toolbox.NetworkImageView
-        android:id="@+id/header_photo"
-        android:layout_width="match_parent"
-        android:scaleType="centerCrop"
-        android:layout_height="200dp"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/header_photo"
+                android:layout_width="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_height="match_parent"/>
+
+            <Button
+                android:id="@+id/photo_btn"
+                android:layout_gravity="bottom|right"
+                android:background="@color/accent"
+                android:textColor="@color/white"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                android:onClick="loadPhotos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="More Photos"/>
+
+        </FrameLayout>
 
     <TextView
         android:layout_width="match_parent"
