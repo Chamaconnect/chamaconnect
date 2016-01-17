@@ -16,7 +16,7 @@ import android.widget.Toast;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class SignupActivity extends AppCompatActivity {
+public class SignupActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "SignupActivity";
 
     @InjectView(R.id.input_name)
@@ -59,10 +59,10 @@ public class SignupActivity extends AppCompatActivity {
     public void signup() {
         Log.d(TAG, "Signup");
 
-        if (!validate()) {
-            onSignupFailed();
-            return;
-        }
+//        if (!validate()) {
+//            onSignupFailed();
+//            return;
+//        }
 
         _signupButton.setEnabled(false);
 
@@ -103,38 +103,38 @@ public class SignupActivity extends AppCompatActivity {
         _signupButton.setEnabled(true);
     }
 
-    public boolean validate() {
-        boolean valid = true;
-
-        String name = _nameText.getText().toString();
-        String phone = _phone.getText().toString();
-        String certificate = _certificate.getText().toString();
-
-        if (name.isEmpty() || name.length() < 3) {
-            _nameText.setError("at least 3 characters");
-            valid = false;
-        } else {
-            _nameText.setError(null);
-        }
-
-        if (phone.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(phone).matches()) {
-            _phone.setError("enter a valid email address");
-            valid = false;
-        } else {
-            _phone.setError(null);
-        }
-
-        if (certificate.isEmpty() || certificate.length() < 4 || certificate.length() > 10) {
-            _certificate.setError("between 4 and 10 alphanumeric characters");
-            valid = false;
-        } else {
-            _certificate.setError(null);
-        }
-
-        return valid;
-
-
-    }
+//    public boolean validate() {
+//        boolean valid = true;
+//
+//        String name = _nameText.getText().toString();
+//        String phone = _phone.getText().toString();
+//        String certificate = _certificate.getText().toString();
+//
+//        if (name.isEmpty() || name.length() < 3) {
+//            _nameText.setError("at least 3 characters");
+//            valid = false;
+//        } else {
+//            _nameText.setError(null);
+//        }
+//
+//        if (phone.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(phone).matches()) {
+//            _phone.setError("enter a valid email address");
+//            valid = false;
+//        } else {
+//            _phone.setError(null);
+//        }
+//
+//        if (certificate.isEmpty() || certificate.length() < 4 || certificate.length() > 10) {
+//            _certificate.setError("between 4 and 10 alphanumeric characters");
+//            valid = false;
+//        } else {
+//            _certificate.setError(null);
+//        }
+//
+//        return valid;
+//
+//
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -156,5 +156,10 @@ public class SignupActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
