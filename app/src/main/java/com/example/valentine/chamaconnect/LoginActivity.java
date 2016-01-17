@@ -69,6 +69,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 login();
+                Intent intent = new Intent(LoginActivity.this, ListingsActivity.class);
+                startActivity(intent);
+
             }
         });
 
@@ -86,10 +89,10 @@ public class LoginActivity extends AppCompatActivity {
     public void login() {
         Log.d(TAG, "Login");
 
-        if (!validate()) {
-            onLoginFailed();
-            return;
-        }
+//        if (!validate()) {
+//            onLoginFailed();
+//            return;
+//        }
 
         _loginButton.setEnabled(false);
 
@@ -146,28 +149,28 @@ public class LoginActivity extends AppCompatActivity {
 
         _loginButton.setEnabled(true);
     }
-
-    public boolean validate() {
-        boolean valid = true;
-
-        String account = _account.getText().toString();
-        String code = _activationcode.getText().toString();
-
-        if (account.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(account).matches()) {
-            _account.setError("enter account number");
-            valid = false;
-        } else {
-            _account.setError(null);
-        }
-
-        if (code.isEmpty() || code.length() < 8 || code.length() > 10) {
-            _activationcode.setError("between 4 and 10 alphanumeric characters");
-            valid = false;
-        } else {
-            _activationcode.setError(null);
-        }
-
-        return valid;
-    }
+//
+//    public boolean validate() {
+//        boolean valid = true;
+//
+//        String account = _account.getText().toString();
+//        String code = _activationcode.getText().toString();
+//
+//        if (account.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(account).matches()) {
+//            _account.setError("enter account number");
+//            valid = false;
+//        } else {
+//            _account.setError(null);
+//        }
+//
+//        if (code.isEmpty() || code.length() < 8 || code.length() > 10) {
+//            _activationcode.setError("between 4 and 10 alphanumeric characters");
+//            valid = false;
+//        } else {
+//            _activationcode.setError(null);
+//        }
+//
+//        return valid;
+//    }
 
 }
