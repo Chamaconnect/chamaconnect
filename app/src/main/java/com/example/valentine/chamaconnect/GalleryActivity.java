@@ -1,4 +1,4 @@
-package com.sourcey.imagegallerydemo;
+package com.example.valentine.chamaconnect;
 
 import android.content.Context;
 import android.graphics.Bitmap;

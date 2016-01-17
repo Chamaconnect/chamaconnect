@@ -77,6 +77,11 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
+        <activity
+            android:name=".GalleryActivity"
+            android:theme="@style/AppTheme.Gallery">
+        </activity>
+
     </application>
 
 </manifest>
